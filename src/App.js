@@ -3,29 +3,30 @@ import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Dialogs from "./Components/Dialogs/Dialogs";
 import News from "./Components/News/News"
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 const App = (props) => {
     return (
-        <BrowserRouter>
+
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="/profile" element={<Profile posts={props.posts}/>}/>
-                        <Route path="/dialogs" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+                        <Route path="/profile" element={<Profile />}/>
+                        <Route path="/dialogs" element={<DialogsContainer />}/>
+                        <Route path="/users" element={<UsersContainer /> }/>
                         <Route path="/News" element={<News/>}/>
                         <Route path="/Music" element={<Music/>}/>
                         <Route path="/Settings" element={<Settings/>}/>
-                    </Routes>
-                </div>
-            </div>
-        </BrowserRouter>
-    )
-}
+                            </Routes>
+                            </div>
+                            </div>
+                            )
+                        }
 
-export default App;
+                               export default App;
